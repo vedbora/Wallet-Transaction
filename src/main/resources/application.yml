@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: wallet-transaction-system
+
+  datasource:
+    url: ${DB_URL:jdbc:h2:mem:walletdb;DB_CLOSE_DELAY=-1;MODE=MYSQL}
+    username: ${DB_USERNAME:sa}
+    password: ${DB_PASSWORD:}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+
+server:
+  port: ${PORT:8080}
+
+app:
+  jwt:
+    # UTF-8 secret; must be >= 32 bytes for HS256. Override in production via JWT_SECRET.
+    secret: ${JWT_SECRET:change-me-please-use-a-secret-at-least-32-chars!!}
+    expiration-ms: 3600000
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
