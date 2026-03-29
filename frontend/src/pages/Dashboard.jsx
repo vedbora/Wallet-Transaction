@@ -80,7 +80,7 @@ export default function Dashboard() {
     }
     try {
       const payload = {
-        amount: createForm.amount,
+        amount: createForm.amount.replace(/,/g, ''),
         type: txMode,
         description: desc,
       };
@@ -107,7 +107,7 @@ export default function Dashboard() {
       await api(`/transactions/${editing.id}`, {
         method: 'PUT',
         body: JSON.stringify({
-          amount: editing.amount,
+          amount: editing.amount.replace(/,/g, ''),
           type: editing.type,
           description: editing.description.trim(),
         }),

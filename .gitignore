@@ -1,5 +1,18 @@
-/target
-/.idea
-*.iml
+# Build files
+target/
+
+# Node modules
+node_modules/
+
+# Maven / local tools (IMPORTANT)
+.tools/
+
+# Logs
 *.log
+
+# Env files
 .env
+
+# OS files
+.DS_Store
+Thumbs.db
